@@ -7,6 +7,7 @@ import {
   FormInput,
   FormValidationMessage
 } from 'react-native-elements';
+import { addCardToDeck } from '../utils/api';
 
 
 class AddEntry extends React.Component {
@@ -24,12 +25,22 @@ class AddEntry extends React.Component {
 
   handleSubmit = () => {
     if (this.state.questionText && this.state.answerText) {
-      // saveDeckTitle(this.state.titleText);
+      const { questionText, answerText } = this.state;
+      const title = this.props.navigation.state.params.title;
+
+      const card = {
+        question: questionText,
+        answer: answerText
+      };
+
+      addCardToDeck(title, card);
+
       this.setState({
         errorMessage: false,
         questionText: '',
         answerText: ''
       });
+
       this.props.navigation.goBack(Keyboard.dismiss());
     } else {
       this.setState({ errorMessage: true })

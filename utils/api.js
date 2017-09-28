@@ -40,7 +40,7 @@ export function getDeck(id) {
   return AsyncStorage.getItem(id);
 }
 
-export function saveDeckTitle( title ) {
+export function saveDeckTitle(title) {
   try {
     return AsyncStorage.setItem(title, JSON.stringify({ title, questions: [] }));
   } catch (error) {
@@ -48,10 +48,21 @@ export function saveDeckTitle( title ) {
   }
 }
 
-export function addCardToDeck({ title, card }) {
+export function addCardToDeck(title, card) {
+  console.log("add card", title, card.question, card.answer);
   try {
-    return AsyncStorage.setItem(title, JSON.stringify({ title, card }));
+    AsyncStorage.getItem(title).then(result => {
+      const data = JSON.parse(result);
+
+      let questions = data.questions;
+      questions.push(card);
+
+      AsyncStorage.mergeItem(title, JSON.stringify({
+        questions
+      }));
+    });
   } catch (error) {
     console.log(error);
   }
+  return "thanks"
 }

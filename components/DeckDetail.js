@@ -27,6 +27,16 @@ class DeckDetail extends React.Component {
     });
   }
 
+  componentWillUpdate() {
+    getDeck(this.props.navigation.state.params.entryId).then(cardDeck => {
+      const { title, questions } = JSON.parse(cardDeck);
+      this.setState({
+        title,
+        questions
+      });
+    });
+  }
+
   render() {
     return (
       <View
@@ -49,7 +59,10 @@ class DeckDetail extends React.Component {
               onPress={() => {
                   this.props.navigation.navigate(
                     'AddQuestion',
-                    { navTitle: this.state.title }
+                    {
+                      navTitle: this.state.title,
+                      title: this.state.title
+                    }
                   );
                 }
               }

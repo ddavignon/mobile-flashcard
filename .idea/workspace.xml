@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd461f35-eac7-4011-9790-c33a15b37d88" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/AddEntry.js" afterPath="$PROJECT_DIR$/components/AddEntry.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/AddQuestion.js" afterPath="$PROJECT_DIR$/components/AddQuestion.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/DeckDetail.js" afterPath="$PROJECT_DIR$/components/DeckDetail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/api.js" afterPath="$PROJECT_DIR$/utils/api.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AddEntry.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AddEntry.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/AddEntry.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="30" column="10" lean-forward="true" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
+            <state relative-caret-position="906">
+              <caret line="56" column="12" lean-forward="true" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -82,11 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="api.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="api.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils/api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="44" column="80" lean-forward="false" selection-start-line="44" selection-start-column="80" selection-end-line="44" selection-end-column="80" />
+            <state relative-caret-position="753">
+              <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -95,8 +97,8 @@
       <file leaf-file-name="DeckDetail.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/DeckDetail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+            <state relative-caret-position="408">
+              <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -107,8 +109,8 @@
       <file leaf-file-name="AddQuestion.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/AddQuestion.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="22" selection-end-column="4" />
+            <state relative-caret-position="221">
+              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -153,13 +155,13 @@
         <option value="$PROJECT_DIR$/components/IndividualDeck.js" />
         <option value="$PROJECT_DIR$/components/DeckMain.js" />
         <option value="$PROJECT_DIR$/components/QuizMain.js" />
-        <option value="$PROJECT_DIR$/components/AddQuestion.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/App.js" />
-        <option value="$PROJECT_DIR$/components/DeckDetail.js" />
         <option value="$PROJECT_DIR$/components/DeckList.js" />
-        <option value="$PROJECT_DIR$/utils/api.js" />
         <option value="$PROJECT_DIR$/components/AddEntry.js" />
+        <option value="$PROJECT_DIR$/components/AddQuestion.js" />
+        <option value="$PROJECT_DIR$/components/DeckDetail.js" />
+        <option value="$PROJECT_DIR$/utils/api.js" />
       </list>
     </option>
   </component>
@@ -338,12 +340,12 @@
       <workItem from="1506567013887" duration="1870000" />
       <workItem from="1506569966944" duration="495000" />
       <workItem from="1506571121147" duration="10214000" />
-      <workItem from="1506613787769" duration="13644000" />
+      <workItem from="1506613787769" duration="16975000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26223000" />
+    <option name="totallyTimeSpent" value="29554000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -581,34 +583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/DeckDetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="44" column="80" lean-forward="false" selection-start-line="44" selection-start-column="80" selection-end-line="44" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/AddQuestion.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="22" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/DeckList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="498">
@@ -624,11 +598,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/AddEntry.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="30" column="10" lean-forward="true" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
+        <state relative-caret-position="906">
+          <caret line="56" column="12" lean-forward="true" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/DeckDetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/AddQuestion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="753">
+          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
