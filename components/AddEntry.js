@@ -50,7 +50,7 @@ export default class AddEntry extends React.Component {
             {this.state.errorMessage ? 'This field is required': ''}
           </FormValidationMessage>
           <Button
-            title="Submit"
+            title="Create Deck"
             raised
             backgroundColor="rgb(72, 149, 236)"
             onPress={this.handleSubmit}
