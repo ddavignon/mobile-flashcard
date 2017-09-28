@@ -26,6 +26,7 @@ const data = [
 ];
 
 class DeckList extends React.Component {
+
   renderItem = ({ item }) =>
         <ListItem
           title={item.title}
@@ -48,7 +49,6 @@ class DeckList extends React.Component {
 const styles = {
   containerStyle: {
     flex: 1,
-    paddingTop: 20,
     alignSelf: 'stretch'
   }
 }
