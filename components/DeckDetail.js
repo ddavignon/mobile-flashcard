@@ -11,6 +11,12 @@ class DeckDetail extends React.Component {
     questions: []
   };
 
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: navigation.state.params.navTitle
+    }
+  };
+
   componentDidMount() {
     getDeck(this.props.navigation.state.params.entryId).then(cardDeck => {
       const { title, questions } = JSON.parse(cardDeck);

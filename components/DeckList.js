@@ -31,7 +31,10 @@ class DeckList extends React.Component {
           subtitle={`${item.questions.length} cards`}
           onPress={() => this.props.navigation.navigate(
             'DeckDetail',
-            { entryId: item.key }
+            {
+              entryId: item.key,
+              navTitle: item.title
+            }
           )}
         />;
 
