@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 
 
-class AddEntry extends React.Component {
+class QuizMain extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
       title: navigation.state.params.navTitle
@@ -13,11 +13,11 @@ class AddEntry extends React.Component {
     return (
       <View>
         <Text>
-          Add a question goes here
+          Quiz Main
         </Text>
       </View>
     );
   }
 }
 
-export default AddEntry;
+export default QuizMain;

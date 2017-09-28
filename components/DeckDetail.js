@@ -54,7 +54,15 @@ class DeckDetail extends React.Component {
               icon={{name: 'play-arrow'}}
               backgroundColor='#96C051'
               buttonStyle={[styles.buttonStyle, { marginTop: 10 }]}
-              title='Start Quiz' />
+              title='Start Quiz'
+              onPress={() => {
+                  this.props.navigation.navigate(
+                    'QuizMain',
+                    { navTitle: this.state.title }
+                  );
+                }
+              }
+            />
           </View>
         </Card>
       </View>
