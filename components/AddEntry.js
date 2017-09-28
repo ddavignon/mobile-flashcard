@@ -2,14 +2,16 @@ import React from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  Keyboard
 } from 'react-native';
 import {
   Button,
   FormLabel,
   FormInput,
   FormValidationMessage
-} from 'react-native-elements'
+} from 'react-native-elements';
+import { saveDeckTitle } from '../utils/api';
 
 
 export default class AddEntry extends React.Component {
@@ -19,14 +21,13 @@ export default class AddEntry extends React.Component {
   };
 
   handleSubmit = () => {
-    console.log("this is" + this.state.titleText);
     if (this.state.titleText) {
-
+      saveDeckTitle(this.state.titleText);
       this.setState({
         errorMessage: false,
         titleText: ''
-      })
-
+      });
+      this.props.navigation.goBack(Keyboard.dismiss());
     } else {
       this.setState({ errorMessage: true })
     }
