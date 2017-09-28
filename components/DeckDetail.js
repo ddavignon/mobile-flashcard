@@ -10,6 +10,7 @@ class DeckDetail extends React.Component {
     title: '',
     questions: []
   };
+
   componentDidMount() {
     getDeck(this.props.navigation.state.params.entryId).then(cardDeck => {
       const { title, questions } = JSON.parse(cardDeck);
@@ -38,7 +39,15 @@ class DeckDetail extends React.Component {
               icon={{name: 'add-circle'}}
               backgroundColor='#03A9F4'
               buttonStyle={styles.buttonStyle}
-              title='Add Card' />
+              title='Add Card'
+              onPress={() => {
+                  this.props.navigation.navigate(
+                    'AddQuestion',
+                    { navTitle: this.state.title }
+                  );
+                }
+              }
+            />
           </View>
           <View>
             <Button

@@ -6,6 +6,7 @@ import {
 import DeckMain from './components/DeckMain';
 import DeckDetail from './components/DeckDetail';
 import AddEntry from './components/AddEntry';
+import AddQuestion from './components/AddQuestion';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { FontAwesome, Ionicons } from '@expo/vector-icons';
 import { Constants } from 'expo';
@@ -62,8 +63,18 @@ const MainNavigator =  StackNavigator({
 
       }
     }
+  },
+  AddQuestion: {
+    screen: AddQuestion,
+    navigationOptions: {
+      headerTintColor: "white",
+      headerStyle: {
+        backgroundColor: "purple"
+
+      }
+    }
   }
-})
+});
 
 export default class App extends React.Component {
   render() {
