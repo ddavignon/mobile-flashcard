@@ -9,6 +9,15 @@ import { getDecks } from '../utils/api';
 
 
 class DeckList extends React.Component {
+  state = {
+    DBdata: []
+  };
+
+  componentDidMount() {
+    getDecks().then((res) => {
+      this.setState({ DBdata: res })
+    });
+  }
 
   renderItem = ({ item }) =>
         <ListItem
@@ -24,7 +33,7 @@ class DeckList extends React.Component {
     return (
       <View style={styles.containerStyle}>
         <FlatList
-          data={getDecks()}
+          data={this.state.DBdata}
           renderItem={this.renderItem}
         />
       </View>
@@ -37,6 +46,6 @@ const styles = {
     flex: 1,
     alignSelf: 'stretch'
   }
-}
+};
 
 export default DeckList;

@@ -18,17 +18,22 @@ const data = [
   }
 ];
 
-function guid() {
-  function s4() {
-    return Math.floor((1 + Math.random()) * 0x10000)
-      .toString(16)
-      .substring(1);
-  }
-  return s4() + s4() + s4() + s4();
-}
 
 export function getDecks() {
-  return data;
+  return AsyncStorage.getAllKeys().then(keys => {
+    return AsyncStorage.multiGet(keys).then(stores => {
+      return stores.map((result, i, store) => {
+        // get at each store's key/value so you can work with it
+        let key = store[i][0];
+        let value = JSON.parse(store[i][1]);
+        return {
+          key,
+          title: value.title,
+          questions: value.questions
+        };
+      });
+    });
+  });
 }
 
 export function getDeck(id) {
@@ -37,9 +42,9 @@ export function getDeck(id) {
   })
 }
 
-export function saveDeckTitle({ title }) {
+export function saveDeckTitle( title ) {
   try {
-    return AsyncStorage.setItem(guid(), JSON.stringify({ title }));
+    return AsyncStorage.setItem(title, JSON.stringify({ title, questions: [] }));
   } catch (error) {
     console.log(error);
   }
@@ -47,7 +52,7 @@ export function saveDeckTitle({ title }) {
 
 export function addCardToDeck({ title, card }) {
   try {
-    return AsyncStorage.setItem(guid(), JSON.stringify({ title, card }));
+    return AsyncStorage.setItem(title, JSON.stringify({ title, card }));
   } catch (error) {
     console.log(error);
   }
