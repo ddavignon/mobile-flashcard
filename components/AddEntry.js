@@ -21,12 +21,21 @@ export default class AddEntry extends React.Component {
 
   handleSubmit = () => {
     if (this.state.titleText) {
-      saveDeckTitle(this.state.titleText);
+      const { titleText } = this.state;
+      saveDeckTitle(titleText);
+      this.props.navigation.navigate(
+        'DeckDetail',
+        {
+          entryId: titleText,
+          navTitle: titleText
+        },
+        Keyboard.dismiss()
+      );
       this.setState({
         errorMessage: false,
         titleText: ''
       });
-      this.props.navigation.goBack(Keyboard.dismiss());
+      // / this.props.navigation.goBack(Keyboard.dismiss());
     } else {
       this.setState({ errorMessage: true })
     }
