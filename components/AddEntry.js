@@ -1,13 +1,12 @@
 import React from 'react';
 import {
-  StyleSheet,
   Text,
-  View,
+  KeyboardAvoidingView,
   Keyboard
 } from 'react-native';
 import {
   Button,
-  FormLabel,
+  Card,
   FormInput,
   FormValidationMessage
 } from 'react-native-elements';
@@ -35,31 +34,29 @@ export default class AddEntry extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <FormLabel>What is the title of your new Deck?</FormLabel>
-        <FormInput
-          onChangeText={titleText => this.setState({ titleText })}
-          value={this.state.titleText}
-        />
-        <FormValidationMessage>
-          {this.state.errorMessage ? 'This field is required': ''}
-        </FormValidationMessage>
-        <Button
-          title="Submit"
-          raised
-          backgroundColor="rgb(72, 149, 236)"
-          onPress={this.handleSubmit}
-        />
-      </View>
+      <KeyboardAvoidingView style={{
+        flex: 1,
+          justifyContent: 'center',
+          alignContent: 'center'
+        }}
+        behavior="padding"
+      >
+        <Card title="What is the title of your new deck?" >
+          <FormInput
+            onChangeText={titleText => this.setState({ titleText })}
+            value={this.state.titleText}
+          />
+          <FormValidationMessage>
+            {this.state.errorMessage ? 'This field is required': ''}
+          </FormValidationMessage>
+          <Button
+            title="Submit"
+            raised
+            backgroundColor="rgb(72, 149, 236)"
+            onPress={this.handleSubmit}
+          />
+        </Card>
+      </KeyboardAvoidingView>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
