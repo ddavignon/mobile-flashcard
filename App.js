@@ -4,8 +4,9 @@ import {
   View
 } from 'react-native';
 import DeckMain from './components/DeckMain';
+import DeckDetail from './components/DeckDetail';
 import AddEntry from './components/AddEntry';
-import { TabNavigator } from 'react-navigation';
+import { TabNavigator, StackNavigator } from 'react-navigation';
 import { FontAwesome, Ionicons } from '@expo/vector-icons';
 import { Constants } from 'expo';
 
@@ -40,6 +41,30 @@ const Tabs = TabNavigator({
   }
 });
 
+const MainNavigator =  StackNavigator({
+  Home: {
+    screen: Tabs,
+    navigationOptions: {
+      title: "Card Decks",
+      headerTintColor: "white",
+      headerStyle: {
+        backgroundColor: "purple"
+
+      }
+    }
+  },
+  DeckDetail: {
+    screen: DeckDetail,
+    navigationOptions: {
+      headerTintColor: "white",
+      headerStyle: {
+        backgroundColor: "purple"
+
+      }
+    }
+  }
+})
+
 export default class App extends React.Component {
   render() {
     return (
@@ -48,7 +73,7 @@ export default class App extends React.Component {
           backgroundColor="purple"
           barStyle="light-content"
         />
-        <Tabs />
+        <MainNavigator />
       </View>
     );
   }

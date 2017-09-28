@@ -4,26 +4,9 @@ import {
   View,
   FlatList
 } from 'react-native';
-import { Card, ListItem } from 'react-native-elements';
+import { ListItem } from 'react-native-elements';
+import { getDecks } from '../utils/api';
 
-
-const data = [
-  {
-    title: 'Title Text',
-    cardCount: 3,
-    key: 'item1'
-  },
-  {
-    title: 'Different Text',
-    cardCount: 3,
-    key: 'item2'
-  },
-  {
-    title: 'Some Text',
-    cardCount: 3,
-    key: 'item3'
-  }
-];
 
 class DeckList extends React.Component {
 
@@ -31,14 +14,17 @@ class DeckList extends React.Component {
         <ListItem
           title={item.title}
           subtitle={`${item.cardCount} cards`}
-          onPress={() => alert("you pressed!")}
+          onPress={() => this.props.navigation.navigate(
+            'DeckDetail',
+            { entryId: item.key }
+          )}
         />;
 
   render() {
     return (
       <View style={styles.containerStyle}>
         <FlatList
-          data={data}
+          data={getDecks()}
           renderItem={this.renderItem}
         />
       </View>

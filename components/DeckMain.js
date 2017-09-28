@@ -7,7 +7,7 @@ export default class DeckMain extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <DeckList />
+        <DeckList {...this.props} />
       </View>
     );
   }
