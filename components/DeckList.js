@@ -19,10 +19,16 @@ class DeckList extends React.Component {
     });
   }
 
+  componentWillUpdate() {
+    getDecks().then((res) => {
+      this.setState({ DBdata: res })
+    });
+  }
+
   renderItem = ({ item }) =>
         <ListItem
           title={item.title}
-          subtitle={`${item.cardCount} cards`}
+          subtitle={`${item.questions.length} cards`}
           onPress={() => this.props.navigation.navigate(
             'DeckDetail',
             { entryId: item.key }

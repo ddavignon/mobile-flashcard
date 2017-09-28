@@ -37,9 +37,8 @@ export function getDecks() {
 }
 
 export function getDeck(id) {
-  AsyncStorage.getItem(id, (err, result) => {
-    return result;
-  })
+  console.log(id);
+  return AsyncStorage.getItem(id);
 }
 
 export function saveDeckTitle( title ) {

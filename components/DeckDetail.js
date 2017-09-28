@@ -1,8 +1,21 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { getDeck } from '../utils/api';
 
 
 class DeckDetail extends React.Component {
+  state = {
+    cardDeck: {}
+  };
+  componentDidMount() {
+    getDeck(this.props.navigation.state.params.entryId).then(cardDeck => {
+      console.log(cardDeck);
+      this.setState({
+        cardDeck
+      });
+    });
+  }
+
   render() {
     return(
       <View>
