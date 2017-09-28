@@ -1,21 +1,73 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { KeyboardAvoidingView, Keyboard } from 'react-native';
+import {
+  Card,
+  Button,
+  FormLabel,
+  FormInput,
+  FormValidationMessage
+} from 'react-native-elements';
 
 
 class AddEntry extends React.Component {
+  state = {
+    questionText: '',
+    answerText: '',
+    errorMessage: ''
+  };
+
   static navigationOptions = ({ navigation }) => {
     return {
       title: navigation.state.params.navTitle
     }
   };
 
+  handleSubmit = () => {
+    if (this.state.questionText && this.state.answerText) {
+      // saveDeckTitle(this.state.titleText);
+      this.setState({
+        errorMessage: false,
+        questionText: '',
+        answerText: ''
+      });
+      this.props.navigation.goBack(Keyboard.dismiss());
+    } else {
+      this.setState({ errorMessage: true })
+    }
+  };
+
   render() {
     return (
-      <View>
-        <Text>
-          Add a question goes here
-        </Text>
-      </View>
+      <KeyboardAvoidingView
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignContent: 'center'
+        }}
+        behavior="padding"
+      >
+        <Card title="Add a Card" >
+          <FormLabel>Question:</FormLabel>
+          <FormInput
+            onChangeText={questionText => this.setState({ questionText })}
+            value={this.state.titleText}
+          />
+          <FormLabel>Answer:</FormLabel>
+          <FormInput
+            onChangeText={answerText => this.setState({ answerText })}
+            value={this.state.titleText}
+          />
+          <FormValidationMessage>
+            {this.state.errorMessage ? 'Both fields are required': ''}
+          </FormValidationMessage>
+          <Button
+            title="Submit"
+            raised
+            backgroundColor="rgb(72, 149, 236)"
+            onPress={this.handleSubmit}
+          />
+        </Card>
+      </KeyboardAvoidingView>
     );
   }
 }
