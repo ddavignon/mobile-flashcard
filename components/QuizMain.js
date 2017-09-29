@@ -6,6 +6,10 @@ import {
   Button,
   Card
 } from 'react-native-elements';
+import {
+  clearLocalNotification,
+  setLocalNotification
+} from '../utils/helpers';
 
 
 class QuizMain extends React.Component {
@@ -22,6 +26,11 @@ class QuizMain extends React.Component {
     }
   };
 
+  resetNotification() {
+    clearLocalNotification()
+      .then(setLocalNotification);
+  }
+
   resetQuiz() {
     this.setState({
       showQuestion: true,
@@ -29,12 +38,14 @@ class QuizMain extends React.Component {
       currentQuestion: 0,
       correctAnswers: 0
     });
+    this.resetNotification()
   }
 
   backToDeck() {
     const backAction = NavigationActions.back();
     this.resetQuiz();
     this.props.navigation.dispatch(backAction);
+    this.resetNotification()
   }
 
   shuffleQuestions() {
