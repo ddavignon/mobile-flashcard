@@ -49,7 +49,7 @@ export function saveDeckTitle(title) {
 }
 
 export function addCardToDeck(title, card) {
-  console.log("add card", title, card.question, card.answer);
+  // console.log("add card", title, card.question, card.answer);
   try {
     AsyncStorage.getItem(title).then(result => {
       const data = JSON.parse(result);
