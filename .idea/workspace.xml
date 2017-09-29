@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd461f35-eac7-4011-9790-c33a15b37d88" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/QuizMain.js" afterPath="$PROJECT_DIR$/components/QuizMain.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -119,17 +120,17 @@
       <file leaf-file-name="QuizMain.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/components/QuizMain.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="36" column="47" lean-forward="false" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+            <state relative-caret-position="810">
+              <caret line="151" column="20" lean-forward="false" selection-start-line="151" selection-start-column="20" selection-end-line="151" selection-end-column="20" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <marker date="1506688016000" expanded="true" signature="1589:1608" ph="..." />
-                <marker date="1506688016000" expanded="true" signature="1608:1937" ph="..." />
-                <marker date="1506688016000" expanded="true" signature="1628:1676" ph="..." />
-                <marker date="1506688016000" expanded="true" signature="1810:1898" ph="..." />
-                <marker date="1506688016000" expanded="true" signature="1956:2272" ph="..." />
-                <marker date="1506688016000" expanded="true" signature="2291:2519" ph="..." />
-                <marker date="1506688016000" expanded="true" signature="3099:3160" ph="..." />
+                <marker date="1506689469000" expanded="true" signature="1781:1800" ph="..." />
+                <marker date="1506689469000" expanded="true" signature="1800:2129" ph="..." />
+                <marker date="1506689469000" expanded="true" signature="1820:1868" ph="..." />
+                <marker date="1506689469000" expanded="true" signature="2002:2090" ph="..." />
+                <marker date="1506689469000" expanded="true" signature="2148:2464" ph="..." />
+                <marker date="1506689469000" expanded="true" signature="2483:2711" ph="..." />
+                <marker date="1506689469000" expanded="true" signature="3291:3352" ph="..." />
               </folding>
             </state>
           </provider>
@@ -345,12 +346,12 @@
       <workItem from="1506567013887" duration="1870000" />
       <workItem from="1506569966944" duration="495000" />
       <workItem from="1506571121147" duration="10214000" />
-      <workItem from="1506613787769" duration="28152000" />
+      <workItem from="1506613787769" duration="28865000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40731000" />
+    <option name="totallyTimeSpent" value="41444000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -372,7 +373,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38304314" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15972748" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -631,17 +632,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/QuizMain.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="36" column="47" lean-forward="false" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+        <state relative-caret-position="810">
+          <caret line="151" column="20" lean-forward="false" selection-start-line="151" selection-start-column="20" selection-end-line="151" selection-end-column="20" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <marker date="1506688016000" expanded="true" signature="1589:1608" ph="..." />
-            <marker date="1506688016000" expanded="true" signature="1608:1937" ph="..." />
-            <marker date="1506688016000" expanded="true" signature="1628:1676" ph="..." />
-            <marker date="1506688016000" expanded="true" signature="1810:1898" ph="..." />
-            <marker date="1506688016000" expanded="true" signature="1956:2272" ph="..." />
-            <marker date="1506688016000" expanded="true" signature="2291:2519" ph="..." />
-            <marker date="1506688016000" expanded="true" signature="3099:3160" ph="..." />
+            <marker date="1506689469000" expanded="true" signature="1781:1800" ph="..." />
+            <marker date="1506689469000" expanded="true" signature="1800:2129" ph="..." />
+            <marker date="1506689469000" expanded="true" signature="1820:1868" ph="..." />
+            <marker date="1506689469000" expanded="true" signature="2002:2090" ph="..." />
+            <marker date="1506689469000" expanded="true" signature="2148:2464" ph="..." />
+            <marker date="1506689469000" expanded="true" signature="2483:2711" ph="..." />
+            <marker date="1506689469000" expanded="true" signature="3291:3352" ph="..." />
           </folding>
         </state>
       </provider>

@@ -68,6 +68,13 @@ class QuizMain extends React.Component {
               : `A: ${questions[currentQuestion].answer}`
           }
         >
+          <View>
+            <Text
+              style={styles.questionsRemaining}
+            >
+              {`${currentQuestion}/${questions.length}`}
+            </Text>
+          </View>
           <View style={styles.badgeStyle}>
             <Badge
               containerStyle={{ backgroundColor: 'violet'}}
@@ -139,6 +146,10 @@ const styles = {
     marginLeft: 0,
     marginRight: 0,
     marginBottom: 0,
+  },
+  questionsRemaining: {
+    textAlign: 'center',
+    marginBottom: 10
   },
   badgeStyle: {
     justifyContent: 'center',
