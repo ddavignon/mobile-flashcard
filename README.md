@@ -32,3 +32,4 @@ The most recent version of this guide is available [here](https://github.com/rea
 
 - Swipe list item to edit / delete card decks
 - Edit / delete questions from card deck
+- Keep running score of each deck or history of scores
