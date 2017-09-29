@@ -2,9 +2,10 @@ import React from 'react';
 import {
   Text,
   View,
-  FlatList
+  FlatList,
+  TouchableOpacity
 } from 'react-native';
-import { Card, ListItem } from 'react-native-elements';
+import { Badge, Card } from 'react-native-elements';
 import { getDecks } from '../utils/api';
 
 
@@ -26,21 +27,30 @@ class DeckList extends React.Component {
   }
 
   renderItem = ({ item }) =>
-      <Card
-        title={item.title}
-        subtitle={`${item.questions.length} cards`}
-        onPress={() => this.props.navigation.navigate(
+    <TouchableOpacity
+      onPress={() => this.props.navigation.navigate(
               'DeckDetail',
               {
                 entryId: item.key,
                 navTitle: item.title
               }
             )}
-      >
-        <Text>
-          {`${item.questions.length} cards`}
-        </Text>
-      </Card>;
+    >
+      <View>
+        <Card
+          title={item.title}
+          subtitle={`${item.questions.length} cards`}
+        >
+          <Badge
+            containerStyle={{ backgroundColor: 'lightblue'}}
+          >
+            <Text>
+              {`${item.questions.length} cards`}
+            </Text>
+          </Badge>
+        </Card>
+      </View>
+    </TouchableOpacity>;
 
 
   render() {
