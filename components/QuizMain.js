@@ -9,7 +9,8 @@ import {
 
 class QuizMain extends React.Component {
   state = {
-    showQuestion: true
+    showQuestion: true,
+    questions: this.shuffleQuestions()
   };
 
   static navigationOptions = ({ navigation }) => {
@@ -18,10 +19,27 @@ class QuizMain extends React.Component {
     }
   };
 
+  shuffleQuestions() {
+    const questions = this.props.navigation.state.params.questions.filter(element => {
+      return element !== undefined;
+    });
+    let i = questions.length-1;
+
+    do {
+      const randomIndex = Math.floor(Math.random()*(questions.length-1));
+      const swapTarget = questions[randomIndex];
+      questions[randomIndex] = questions[i];
+      questions[i] = swapTarget;
+      i--;
+    } while (i >= 0);
+
+    return questions;
+  }
+
   renderCard() {
     return (
       <Card
-        title={this.state.showQuestion ? "Quiz question" : "Quiz answer"}
+        title={this.state.showQuestion ? "Q: Quiz question" : "A: Quiz answer"}
       >
         <View style={styles.badgeStyle}>
           <Badge

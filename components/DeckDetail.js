@@ -77,7 +77,9 @@ class DeckDetail extends React.Component {
               onPress={() => {
                   this.props.navigation.navigate(
                     'QuizMain',
-                    { navTitle: this.state.title }
+                    {
+                      navTitle: this.state.title,
+                      questions: this.state.questions }
                   );
                 }
               }
