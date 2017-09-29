@@ -17,24 +17,24 @@ class DeckDetail extends React.Component {
     }
   };
 
+  getDeckDetails() {
+    getDeck(this.props.navigation.state.params.entryId)
+      .then(cardDeck => {
+        const { title, questions } = JSON.parse(cardDeck);
+        this.setState({
+          title,
+          questions
+        });
+      })
+      .catch(err => { return null });
+  }
+
   componentDidMount() {
-    getDeck(this.props.navigation.state.params.entryId).then(cardDeck => {
-      const { title, questions } = JSON.parse(cardDeck);
-      this.setState({
-        title,
-        questions
-      });
-    });
+    this.getDeckDetails();
   }
 
   componentWillUpdate() {
-    getDeck(this.props.navigation.state.params.entryId).then(cardDeck => {
-      const { title, questions } = JSON.parse(cardDeck);
-      this.setState({
-        title,
-        questions
-      });
-    });
+    this.getDeckDetails();
   }
 
   render() {

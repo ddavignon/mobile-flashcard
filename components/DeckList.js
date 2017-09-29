@@ -4,7 +4,7 @@ import {
   View,
   FlatList
 } from 'react-native';
-import { ListItem } from 'react-native-elements';
+import { Card, ListItem } from 'react-native-elements';
 import { getDecks } from '../utils/api';
 
 
@@ -16,7 +16,7 @@ class DeckList extends React.Component {
   componentDidMount() {
     getDecks().then((res) => {
       this.setState({ DBdata: res })
-    });
+    }).then(() => console.log(this.state.DBdata));
   }
 
   componentWillUpdate() {
@@ -26,25 +26,34 @@ class DeckList extends React.Component {
   }
 
   renderItem = ({ item }) =>
-        <ListItem
-          title={item.title}
-          subtitle={`${item.questions.length} cards`}
-          onPress={() => this.props.navigation.navigate(
-            'DeckDetail',
-            {
-              entryId: item.key,
-              navTitle: item.title
-            }
-          )}
-        />;
+      <Card
+        title={item.title}
+        subtitle={`${item.questions.length} cards`}
+        onPress={() => this.props.navigation.navigate(
+              'DeckDetail',
+              {
+                entryId: item.key,
+                navTitle: item.title
+              }
+            )}
+      >
+        <Text>
+          {`${item.questions.length} cards`}
+        </Text>
+      </Card>;
+
 
   render() {
     return (
       <View style={styles.containerStyle}>
-        <FlatList
-          data={this.state.DBdata}
-          renderItem={this.renderItem}
-        />
+        {this.state.DBdata.length > 0
+          ?
+          <FlatList
+            data={this.state.DBdata}
+            renderItem={this.renderItem}
+          />
+          : <Card title="Create a deck to get started!"/>
+        }
       </View>
     );
   }

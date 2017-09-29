@@ -31,7 +31,7 @@ export function getDecks() {
           title: value.title,
           questions: value.questions
         };
-      });
+      }).filter(items => { return typeof items.questions !== 'undefined' });
     });
   });
 }
