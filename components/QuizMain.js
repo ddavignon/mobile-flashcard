@@ -20,9 +20,7 @@ class QuizMain extends React.Component {
   };
 
   shuffleQuestions() {
-    const questions = this.props.navigation.state.params.questions.filter(element => {
-      return element !== undefined;
-    });
+    const questions = this.props.navigation.state.params.questions;
     let i = questions.length-1;
 
     do {
@@ -37,6 +35,7 @@ class QuizMain extends React.Component {
   }
 
   renderCard() {
+    console.log(this.state.questions);
     return (
       <Card
         title={this.state.showQuestion ? "Q: Quiz question" : "A: Quiz answer"}
