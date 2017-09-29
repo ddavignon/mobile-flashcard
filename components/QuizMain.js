@@ -72,7 +72,7 @@ class QuizMain extends React.Component {
             <Text
               style={styles.questionsRemaining}
             >
-              {`${currentQuestion+1}/${questions.length}`}
+              {`Question ${currentQuestion+1} of ${questions.length}`}
             </Text>
           </View>
           <View style={styles.badgeStyle}>
