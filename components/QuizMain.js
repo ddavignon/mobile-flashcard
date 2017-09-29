@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { NavigationActions } from 'react-navigation';
 import {
   Badge,
   Button,
@@ -10,7 +11,9 @@ import {
 class QuizMain extends React.Component {
   state = {
     showQuestion: true,
-    questions: this.shuffleQuestions()
+    questions: this.shuffleQuestions(),
+    currentQuestion: 0,
+    correctAnswers: 0
   };
 
   static navigationOptions = ({ navigation }) => {
@@ -18,6 +21,21 @@ class QuizMain extends React.Component {
       title: navigation.state.params.navTitle
     }
   };
+
+  resetQuiz() {
+    this.setState({
+      showQuestion: true,
+      questions: this.shuffleQuestions(),
+      currentQuestion: 0,
+      correctAnswers: 0
+    });
+  }
+
+  backToDeck() {
+    const backAction = NavigationActions.back();
+    this.resetQuiz();
+    this.props.navigation.dispatch(backAction);
+  }
 
   shuffleQuestions() {
     const questions = this.props.navigation.state.params.questions;
@@ -35,30 +53,66 @@ class QuizMain extends React.Component {
   }
 
   renderCard() {
-    console.log(this.state.questions);
+    const {
+      questions,
+      currentQuestion,
+      correctAnswers
+    } = this.state;
+
+    if (currentQuestion < questions.length) {
+      return (
+        <Card
+          title={
+            this.state.showQuestion
+              ? `Q: ${questions[currentQuestion].question}`
+              : `A: ${questions[currentQuestion].answer}`
+          }
+        >
+          <View style={styles.badgeStyle}>
+            <Badge
+              containerStyle={{ backgroundColor: 'violet'}}
+              onPress={() => this.setState({ showQuestion: !this.state.showQuestion })}
+            >
+              <Text>
+                {this.state.showQuestion ? "Answer" : "Question"}
+              </Text>
+            </Badge>
+          </View>
+          <Button
+            buttonStyle={styles.buttonStyle}
+            title="Correct"
+            backgroundColor='#377D22'
+            onPress={() => {
+              this.setState({
+                currentQuestion: currentQuestion+1,
+                correctAnswers: correctAnswers+1
+              });
+            }}
+          />
+          <Button
+            buttonStyle={[styles.buttonStyle, { marginTop: 10 }]}
+            title="Incorrect"
+            backgroundColor='#C3392A'
+            onPress={() => this.setState({ currentQuestion: currentQuestion+1 })}
+          />
+        </Card>
+      );
+    }
     return (
       <Card
-        title={this.state.showQuestion ? "Q: Quiz question" : "A: Quiz answer"}
+        title={`You got ${correctAnswers} out of ${questions.length}`}
       >
-        <View style={styles.badgeStyle}>
-          <Badge
-            containerStyle={{ backgroundColor: 'violet'}}
-            onPress={() => this.setState({ showQuestion: !this.state.showQuestion })}
-          >
-            <Text>
-              {this.state.showQuestion ? "Answer" : "Question"}
-            </Text>
-          </Badge>
-        </View>
         <Button
           buttonStyle={styles.buttonStyle}
-          title="Correct"
+          title="Start Over"
           backgroundColor='#377D22'
+          onPress={() => this.resetQuiz()}
         />
         <Button
           buttonStyle={[styles.buttonStyle, { marginTop: 10 }]}
-          title="Incorrect"
+          title="Back to Deck"
           backgroundColor='#C3392A'
+          onPress={() => this.backToDeck()}
         />
       </Card>
     );
