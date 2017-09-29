@@ -23,6 +23,10 @@ export default class AddEntry extends React.Component {
     if (this.state.titleText) {
       const { titleText } = this.state;
       saveDeckTitle(titleText);
+      this.setState({
+        errorMessage: false,
+        titleText: ''
+      });
       this.props.navigation.navigate(
         'DeckDetail',
         {
@@ -31,10 +35,6 @@ export default class AddEntry extends React.Component {
         },
         Keyboard.dismiss()
       );
-      this.setState({
-        errorMessage: false,
-        titleText: ''
-      });
     } else {
       this.setState({ errorMessage: true })
     }

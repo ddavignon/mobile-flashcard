@@ -26,12 +26,18 @@ export function getDecks() {
         // get at each store's key/value so you can work with it
         let key = store[i][0];
         let value = JSON.parse(store[i][1]);
-        return {
-          key,
-          title: value.title,
-          questions: value.questions
-        };
-      }).filter(items => { return typeof items.questions !== 'undefined' });
+        if (value) {
+          return {
+            key,
+            title: value.title,
+            questions: value.questions
+          };
+        }
+      }).filter(items => {
+        if (items) {
+          return typeof items.questions !== 'undefined'
+        }
+      });
     });
   });
 }

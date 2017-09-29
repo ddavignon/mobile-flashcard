@@ -95,13 +95,13 @@ class DeckDetail extends React.Component {
         <View>
           <Button
             title="Delete Deck"
+            buttonStyle={[styles.buttonStyle, { marginTop: 50 }]}
+            backgroundColor="red"
             onPress={() => {
               const { title } = this.state;
               AsyncStorage.removeItem(title)
-              .then(() => {
-                this.props.navigation.goBack();
-              });
-            }}
+              .then(this.props.navigation.goBack());
+             }}
           />
         </View>
       </View>
