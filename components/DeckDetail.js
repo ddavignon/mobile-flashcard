@@ -1,5 +1,9 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import {
+  AsyncStorage,
+  View,
+  Text
+} from 'react-native';
 import { Card, Button } from 'react-native-elements';
 import { getDeck } from '../utils/api';
 
@@ -88,6 +92,18 @@ class DeckDetail extends React.Component {
             />
           </View>
         </Card>
+        <View>
+          <Button
+            title="Delete Deck"
+            onPress={() => {
+              const { title } = this.state;
+              AsyncStorage.removeItem(title)
+              .then(() => {
+                this.props.navigation.goBack();
+              });
+            }}
+          />
+        </View>
       </View>
     )
   }
