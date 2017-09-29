@@ -35,7 +35,6 @@ export default class AddEntry extends React.Component {
         errorMessage: false,
         titleText: ''
       });
-      // / this.props.navigation.goBack(Keyboard.dismiss());
     } else {
       this.setState({ errorMessage: true })
     }
