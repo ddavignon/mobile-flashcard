@@ -32,11 +32,13 @@ class QuizMain extends React.Component {
   }
 
   resetQuiz() {
-    this.setState({
-      showQuestion: true,
-      questions: this.shuffleQuestions(),
-      currentQuestion: 0,
-      correctAnswers: 0
+    this.setState(() =>{
+      return {
+        showQuestion: true,
+          questions: this.shuffleQuestions(),
+        currentQuestion: 0,
+        correctAnswers: 0
+      }
     });
     this.resetNotification()
   }

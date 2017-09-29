@@ -21,9 +21,11 @@ class DeckDetail extends React.Component {
     getDeck(this.props.navigation.state.params.entryId)
       .then(cardDeck => {
         const { title, questions } = JSON.parse(cardDeck);
-        this.setState({
-          title,
-          questions
+        this.setState(() => {
+          return {
+            title,
+            questions
+          }
         });
       })
       .catch(err => { return null });

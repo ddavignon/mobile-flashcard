@@ -14,16 +14,22 @@ class DeckList extends React.Component {
     DBdata: []
   };
 
-  componentDidMount() {
+  fetchDeckDB() {
     getDecks().then((res) => {
-      this.setState({ DBdata: res })
-    }).then(() => console.log(this.state.DBdata));
+      this.setState(() => {
+        return {
+          DBdata: res
+        }
+      });
+    });
+  }
+
+  componentDidMount() {
+    this.fetchDeckDB();
   }
 
   componentWillUpdate() {
-    getDecks().then((res) => {
-      this.setState({ DBdata: res })
-    });
+    this.fetchDeckDB()
   }
 
   renderItem = ({ item }) =>
