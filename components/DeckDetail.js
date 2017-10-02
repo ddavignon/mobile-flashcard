@@ -1,19 +1,18 @@
 import React from 'react';
 import {
-  AsyncStorage,
   View,
   Text
 } from 'react-native';
 import { Card, Button } from 'react-native-elements';
-import { getDeck } from '../utils/api';
+import { connect } from 'react-redux';
+import {
+  getDeckDetails,
+  deleteDeck,
+} from '../actions';
 
 
 
 class DeckDetail extends React.Component {
-  state = {
-    title: '',
-    questions: []
-  };
 
   static navigationOptions = ({ navigation }) => {
     return {
@@ -21,26 +20,18 @@ class DeckDetail extends React.Component {
     }
   };
 
-  getDeckDetails() {
-    getDeck(this.props.navigation.state.params.entryId)
-      .then(cardDeck => {
-        const { title, questions } = JSON.parse(cardDeck);
-        this.setState(() => {
-          return {
-            title,
-            questions
-          }
-        });
-      })
-      .catch(err => { return null });
-  }
-
   componentDidMount() {
-    this.getDeckDetails();
+    this.props.getDeckDetails(this.props.navigation.state.params.entryId);
   }
 
   componentDidUpdate() {
-    this.getDeckDetails();
+    this.props.getDeckDetails(this.props.navigation.state.params.entryId);
+  }
+
+  deleteItem() {
+    const title = this.props.title;
+    this.props.deleteDeck(title);
+    this.props.navigation.goBack();
   }
 
   render() {
@@ -52,9 +43,9 @@ class DeckDetail extends React.Component {
           alignContent: 'center'
         }}
       >
-        <Card title={this.state.title} >
+        <Card title={this.props.title} >
           <Text style={{marginBottom: 10, textAlign: 'center'}}>
-            {this.state.questions.length} cards
+            {this.props.questions ? this.props.questions.length : 0} cards
           </Text>
           <View>
             <Button
@@ -66,8 +57,8 @@ class DeckDetail extends React.Component {
                   this.props.navigation.navigate(
                     'AddQuestion',
                     {
-                      navTitle: this.state.title,
-                      title: this.state.title
+                      navTitle: this.props.title,
+                      title: this.props.title
                     }
                   );
                 }
@@ -84,8 +75,8 @@ class DeckDetail extends React.Component {
                   this.props.navigation.navigate(
                     'QuizMain',
                     {
-                      navTitle: this.state.title,
-                      questions: this.state.questions }
+                      navTitle: this.props.title,
+                      questions: this.props.questions }
                   );
                 }
               }
@@ -97,11 +88,7 @@ class DeckDetail extends React.Component {
             title="Delete Deck"
             buttonStyle={[styles.buttonStyle, { marginTop: 50 }]}
             backgroundColor="red"
-            onPress={() => {
-              const { title } = this.state;
-              AsyncStorage.removeItem(title)
-              .then(this.props.navigation.goBack());
-             }}
+            onPress={() => this.deleteItem()}
           />
         </View>
       </View>
@@ -118,4 +105,12 @@ const styles = {
   }
 };
 
-export default DeckDetail;
+const mapStateToProps = state => {
+
+  const { title, questions } = state.deckDetail ? state.deckDetail : ('', []);
+
+  return { title, questions };
+};
+
+export default connect(mapStateToProps, {
+  deleteDeck, getDeckDetails })(DeckDetail);
