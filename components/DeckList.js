@@ -5,31 +5,33 @@ import {
   FlatList,
   TouchableOpacity
 } from 'react-native';
+import { connect } from 'react-redux';
 import { Badge, Card } from 'react-native-elements';
-import { getDecks } from '../utils/api';
+import { fetchDeckDB } from '../actions';
+// import { getDecks } from '../utils/api';
 
 
 class DeckList extends React.Component {
-  state = {
-    DBdata: []
-  };
+  // state = {
+  //   DBdata: []
+  // };
 
-  fetchDeckDB() {
-    getDecks().then((res) => {
-      this.setState(() => {
-        return {
-          DBdata: res
-        }
-      });
-    });
-  }
+  // fetchDeckDB() {
+  //   getDecks().then((res) => {
+  //     this.setState(() => {
+  //       return {
+  //         DBdata: res
+  //       }
+  //     });
+  //   });
+  // }
 
   componentDidMount() {
-    this.fetchDeckDB();
+    this.props.fetchDeckDB();
   }
 
   componentDidUpdate() {
-    this.fetchDeckDB()
+    this.props.fetchDeckDB()
   }
 
   renderItem = ({ item }) =>
@@ -62,10 +64,10 @@ class DeckList extends React.Component {
   render() {
     return (
       <View style={styles.containerStyle}>
-        {this.state.DBdata.length > 0
+        {this.props.DBdata.length > 0
           ?
           <FlatList
-            data={this.state.DBdata}
+            data={this.props.DBdata}
             renderItem={this.renderItem}
           />
           : <Card title="Create a deck to get started!"/>
@@ -82,4 +84,11 @@ const styles = {
   }
 };
 
-export default DeckList;
+const mapStateToProps = state => {
+  const DBdata = state.decks;
+
+  return { DBdata };
+};
+
+export default connect(mapStateToProps, { fetchDeckDB })(DeckList);
+

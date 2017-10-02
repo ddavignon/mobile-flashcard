@@ -1,0 +1,1 @@
+export const FETCH_DECK_DB = 'fetch_deck_db';
