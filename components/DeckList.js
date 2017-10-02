@@ -8,23 +8,9 @@ import {
 import { connect } from 'react-redux';
 import { Badge, Card } from 'react-native-elements';
 import { fetchDeckDB } from '../actions';
-// import { getDecks } from '../utils/api';
 
 
 class DeckList extends React.Component {
-  // state = {
-  //   DBdata: []
-  // };
-
-  // fetchDeckDB() {
-  //   getDecks().then((res) => {
-  //     this.setState(() => {
-  //       return {
-  //         DBdata: res
-  //       }
-  //     });
-  //   });
-  // }
 
   componentDidMount() {
     this.props.fetchDeckDB();
