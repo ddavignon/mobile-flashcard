@@ -39,7 +39,7 @@ class DeckDetail extends React.Component {
     this.getDeckDetails();
   }
 
-  componentWillUpdate() {
+  componentDidUpdate() {
     this.getDeckDetails();
   }
 

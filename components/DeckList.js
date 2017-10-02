@@ -28,7 +28,7 @@ class DeckList extends React.Component {
     this.fetchDeckDB();
   }
 
-  componentWillUpdate() {
+  componentDidUpdate() {
     this.fetchDeckDB()
   }
 
