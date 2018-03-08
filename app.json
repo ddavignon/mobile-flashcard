@@ -1,5 +1,15 @@
 {
   "expo": {
-    "sdkVersion": "21.0.0"
+    "name": "Mobile Flashcards",
+    "icon": "./logo.png",
+    "description": "An app to demo common functionality",
+    "version": "1.0.0",
+    "sdkVersion": "21.0.0",
+    "ios": {
+      "bundleIdentifier": "com.dustindavignon.mobileflashcards"
+    },
+    "android": {
+      "package": "com.dustindavignon.mobileflashcards"
+    }
   }
 }
